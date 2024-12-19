@@ -6,6 +6,41 @@
     <title>หน้าหลัก</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: nowrap; /* ทำให้การ์ดเรียงต่อกันในแถวเดียว */
+            overflow-x: auto; /* เปิดการเลื่อนแนวนอน */
+            gap: 15px; /* ระยะห่างระหว่าง card */
+            padding-bottom: 10px; /* เพิ่มช่องว่างใต้แถว */
+            scrollbar-width: thin; /* ลดขนาด scrollbar */
+            scrollbar-color: #ccc transparent; /* สี scrollbar */
+        }
+
+        .card-container::-webkit-scrollbar {
+            height: 8px; /* ความสูงของ scrollbar */
+        }
+
+        .card-container::-webkit-scrollbar-thumb {
+            background-color: #ccc; /* สี scrollbar */
+            border-radius: 10px; /* มุม scrollbar */
+        }
+
+        .card-container::-webkit-scrollbar-track {
+            background: transparent; /* สีพื้นหลัง scrollbar */
+        }
+
+        .card {
+            flex: 0 0 auto; /* ทำให้แต่ละ card ไม่ย่อขนาด */
+            height: 100%;
+        }
+
+        .card img {
+            height: 180px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -53,50 +88,41 @@
     <!-- Services Section -->
     <section id="information" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center">R&D Team Updates</h2>
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/Annual Holidays in 2025.png" class="card-img-top" alt="Service 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Annual Holidays in 2025 🧳</h5>
-                            <p class="card-text">วันหยุดประเพณีฯ ประจำปี 2567 บริษัทแม็กเว็ลธ อินโนเวชั่น จำกัด</p>
-                        </div>
+            <h2 class="text-center mb-4">R&D Team Updates</h2>
+            <div class="card-container d-flex overflow-auto">
+                <div class="card mx-2" style="width: 18rem;">
+                    <img src="images/Annual Holidays in 2025.png" class="card-img-top" alt="Service 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Annual Holidays in 2025 🧳</h5>
+                        <p class="card-text">วันหยุดประเพณีฯ ประจำปี 2567 บริษัทแม็กเว็ลธ อินโนเวชั่น จำกัด</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/ServiceFuel.png" class="card-img-top" alt="Service 2">
-                        <div class="card-body">
-                            <h5 class="card-title">How to Calculate Fuel Reimbursement ⛽</h5>
-                            <p class="card-text">การเบิกค่าน้ำมัน ค่าทางด่วนกรณีรถส่วนตัว
-                                คำนวนเบิกค่าน้ำมันรถส่วนตัว
-                                
-                                ค่าน้ำมัน ---->  จำนวน กม / 13 x ราคาน้ำมันตามบิล
-                                ค่าทางด่วน ----> เบิกตามยอดบิล
-                                ค่าสึกหรอ --->  จำนวน กม x 2 
-                                
-                                ให้เก็บบิลเติมน้ำมันทุกครั้ง และต้องเป็นบิลที่มีเลข vat เท่านั้น
-                                
-                                ก่อนเบิกให้แนบเอกสารใบเสร็จใบอนุมัติและเขียนรายละเอียดการเบิกให้ครบ ปล. ถ้าไม่มีใบอนุมัติ เบิกไม่ได้นะครับ เพราะฉะนั้นออกไปข้างนอกโดยใช้รถส่วนตัวให้แจ้งพี่ทำใบอนุมัติก่อนทุกครั้ง และต้องมีลายเซ็นจากพี่หน่อยเท่านั้นถึงจะเบิกได้
-                                
-                                ออก service หรือออกไปพบลูกค้า ให้ check in ใน app acloud ทุกครั้ง ทั้งเวลาไปถึง และเวลากลับ.. หากไม่มี check in ทาง บัญชี จะไม่ให้เบิกเงินครับ. ต้องเขียน memo แจ้งฝ่าย บุคคล และจะโดนบันทึกหักคะแนนความประพฤติ.
-                            </p>
-                        </div>
+                <div class="card mx-2" style="width: 18rem;">
+                    <img src="images/ServiceFuel.png" class="card-img-top" alt="Service 2">
+                    <div class="card-body">
+                        <h5 class="card-title">How to Calculate Fuel Reimbursement ⛽</h5>
+                        <p class="card-text">การเบิกค่าน้ำมัน ค่าทางด่วนกรณีรถส่วนตัว...</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="images/4703650.png" class="card-img-top" alt="Service 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Web Mail Link 📧</h5>
-                            <p class="card-text">ลิงค์สำหรับเข้าเว็บเมล์ <a href="https://mail.mwi.co.th:9998/">Click Here</a></p>
-                        </div>
+                <div class="card mx-2" style="width: 18rem;">
+                    <img src="images/4703650.png" class="card-img-top" alt="Service 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Mail Link 📧</h5>
+                        <p class="card-text">ลิงค์สำหรับเข้าเว็บเมล์ <a href="https://mail.mwi.co.th:9998/">Click Here</a></p>
+                    </div>
+                </div>
+                <!-- เพิ่ม card เพิ่มเติม -->
+                <div class="card mx-2" style="width: 18rem;">
+                    <img src="images/example.png" class="card-img-top" alt="Service 4">
+                    <div class="card-body">
+                        <h5 class="card-title">New Update 🚀</h5>
+                        <p class="card-text">เนื้อหาใหม่เกี่ยวกับการพัฒนาทีมงาน</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- Contact Section -->
     <section id="contact" class="py-5">
